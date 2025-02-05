@@ -20,6 +20,8 @@ In another terminal window, run:
 
 After running `oc login` (requires [oc](https://console.redhat.com/openshift/downloads) and an [OpenShift cluster](https://console.redhat.com/openshift/create))
 
+> admin or developer ?
+
 ```sh
 cd plugin
 yarn run start-console
@@ -41,17 +43,17 @@ To deploy the console plugin to an actual [OpenShift](https://www.redhat.com/en/
 ### Building the images locally
 
 ```sh
-podman build -t quay.io/cmiranda/camel-openshift-console-plugin:latest .
-podman push quay.io/cmiranda/camel-openshift-console-plugin:latest
+podman build -t quay.io/gfournie/camel-openshift-console-plugin:latest .
+podman push quay.io/gfournie/camel-openshift-console-plugin:latest
 ```
 
-**Note**: The image `quay.io/cmiranda/camel-openshift-console-plguin:latest` is published so it can be pulled instead.
+**Note**: The image `quay.io/gfournie/camel-openshift-console-plugin:latest` is published so it can be pulled instead.
 
 ### Deploying the plugin using Helm
 
 ```sh
 oc new-project plugin-camel-openshift-console-plugin
-helm upgrade -i camel-openshift-console-plugin charts/openshift-console-plugin --namespace plugin-camel-openshift-console-plugin --set plugin.image=quay.io/cmiranda/camel-openshift-console-plugin:latest
+helm upgrade -i camel-openshift-console-plugin charts/openshift-console-plugin --namespace plugin-camel-openshift-console-plugin --set plugin.image=quay.io/gfournie/camel-openshift-console-plugin:latest
 ```
 
 # The Camel Tab
