@@ -27,7 +27,7 @@ service-proxy:
 	cd service-proxy && mvn clean install
 
 service-proxy-image: service-proxy
-	podman build -t $(IMAGE_NAME_SERVICE_PROXY):latest servcie-proxy -f service-proxy/src/main/docker/Dockerfile.jvm
+	podman build -t $(IMAGE_NAME_SERVICE_PROXY):latest service-proxy -f service-proxy/src/main/docker/Dockerfile.jvm
 
 plugin-image: plugin
 	podman build -t $(IMAGE_NAME_PLUGIN):latest plugin
