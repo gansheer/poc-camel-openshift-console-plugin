@@ -8,6 +8,12 @@ $ crc config view
 - host-network-access                   : true
 - memory                                : 12228
 - network-mode                          : user
+
+- consent-telemetry                     : yes
+- cpus                                  : 8
+- disk-size                             : 64
+- memory                                : 16384
+- network-mode                          : user
 ```
 
 Start the cluster:
