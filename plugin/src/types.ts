@@ -14,6 +14,16 @@ export type Metrics = {
   gcOverhead?: Snapshot[];
 };
 
+export type CamelSpec = {
+  camelCoreVersion?: string;
+  camelRuntimeType?: string;
+  camelQuarkusVersion?: string;
+  quarkusVersion?: string;
+  camelStringBootVersion?: string;
+  springBootVersion?: string;
+};
+
+
 
 export type Application = {
   kind? : string;
@@ -23,6 +33,7 @@ export type Application = {
   url?: string;
   metrics?: Metrics;
   spec?: PodSpec;
+  camelSpec?: CamelSpec;
   cronSpec?: {
     activeDeadlineSeconds?: number;
     backoffLimit?: number;
@@ -118,3 +129,5 @@ export function cronjobToApplication(cronjob: CronJobKind): Application {
       },
     };
   };
+
+
